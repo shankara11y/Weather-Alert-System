@@ -3,7 +3,6 @@ from weather_class import WeatherStation
 from weather_utils import load_thresholds, validate_number
 
 
-# Lambda function for temperature classification
 temp_category = lambda t: (
     "Cold" if t < 15 else
     "Normal" if t <= 30 else
@@ -33,19 +32,19 @@ def main():
 
     station.save_weather_log("weather_logs.csv")
 
-    # ---------------- Visualization ----------------
+    
 
     temp_trend = [temperature - 2, temperature - 1, temperature]
     humidity_levels = [humidity - 5, humidity]
 
-    # Temperature Line Chart
+ 
     plt.plot(temp_trend)
     plt.title("Temperature Trend")
     plt.xlabel("Time")
     plt.ylabel("Temperature (°C)")
     plt.show()
 
-    # Humidity Bar Chart
+    
     plt.bar(["Morning", "Evening"], humidity_levels)
     plt.title("Humidity Levels")
     plt.ylabel("Humidity (%)")

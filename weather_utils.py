@@ -3,7 +3,7 @@ import json
 from functools import wraps
 
 
-# Decorator to log alert triggers
+
 def alert_logger(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -14,13 +14,13 @@ def alert_logger(func):
     return wrapper
 
 
-# Load alert thresholds from JSON file
+
 def load_thresholds(filename):
     with open(filename, "r") as file:
         return json.load(file)
 
 
-# Validate numerical input
+
 def validate_number(value):
     try:
         return float(value)
@@ -28,7 +28,7 @@ def validate_number(value):
         return None
 
 
-# Load previous weather logs (optional use)
+
 def load_weather_logs(filename):
     records = []
     try:
